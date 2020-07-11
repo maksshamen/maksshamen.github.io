@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Bot</title>
+    <title>Займись исследованием</title>
     <meta charset="UTF-8">
 </head>
 
@@ -18,14 +18,18 @@
     </div>
 
     <div class="topnav">
-        <a href="Назад" id="word">Назад</a>
+        <a href="#">К играм </a>
+        <a href="#">На карту</a>
     </div>
 
     <div id="tell">
         <i>
             <h2>Правила игры</h2>
         </i>
-        <h3>Текст</h3>
+        <h3>В этой вкладке вам необходимо узнать о каком мецената идёт речь по описанию и написать фамилию. Правильный
+            ответ оценивается 1 баллом. Для того, чтобы успешно пройти игру вам нужно ознакомитья с биографией
+            меценатов, представленных на нашем сайте. Важно сказать, что часть ключевой фразы вы сможете получить,
+            заработав и более баллов. Удачи!</h3>
     </div>
 
     <div id="play">
@@ -120,6 +124,40 @@
                     <option>Протасьева</option>
                 </select>
             </div>
+            <div id="space" class="arrow"></div>
+            <div id="block1">
+                <h4>Эта благотворительница была представлена лично императрице Александре Федоровне и вела с ней
+                    переписку.</h4>
+                <select id="n6" class="nom">
+                    <option>Ашанин</option>
+                    <option>Панков</option>
+                    <option>Очкин</option>
+                    <option>Селивёрстов</option>
+                    <option>Швецов</option>
+                    <option>Гельпей</option>
+                    <option>Умнов</option>
+                    <option>Казеев</option>
+                    <option>Тарасович</option>
+                    <option>Протасьева</option>
+                </select>
+            </div>
+            <div id="space" class="arrow"></div>
+            <div id="block1">
+                <h4>Пензенский купец и общественный деятель один их инициаторов создания Российского Союза, обществ
+                    взаимного страхования от огня.</h4>
+                <select id="n7" class="nom">
+                    <option>Ашанин</option>
+                    <option>Панков</option>
+                    <option>Очкин</option>
+                    <option>Селивёрстов</option>
+                    <option>Швецов</option>
+                    <option>Гельпей</option>
+                    <option>Умнов</option>
+                    <option>Казеев</option>
+                    <option>Тарасович</option>
+                    <option>Протасьева</option>
+                </select>
+            </div>
             <button class="button" id="rez" onclick="rez()">Результат</button>
         </div>
         <div id="img">
@@ -173,19 +211,21 @@
     }
 
     .topnav {
-        background-color: #FFFF00;
         overflow: hidden;
-        width: 70px;
+        background-color: #FFFF00;
+        width: 200px;
+        border: 7px double blue;
+        color: blue;
         border-radius: 7px;
     }
 
     .topnav a {
         float: left;
-        color: #f2f2f2;
+        display: block;
+        color: blue;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-        font-size: 17px;
     }
 
     .topnav a:hover {
@@ -198,8 +238,8 @@
         background-color: #FFFF00;
         border: 6px double#0000FF;
         border-radius: 5px;
-        width: 1500px;
-        height: 1300px;
+        width: 1000px;
+        height: 1800px;
         margin-left: 100px;
         margin-top: 50px;
     }
@@ -277,6 +317,7 @@
         border-radius: 15px;
         box-shadow: 0 9px #999;
         margin-left: 100px;
+        margin-top: 50px;
     }
 
     .button:hover {
@@ -298,6 +339,7 @@
         border: 6px double#2C75FF;
     }
 </style>
+
 <script>
     function rez() {
         var n1 = document.getElementById('n1').value;
@@ -305,6 +347,8 @@
         var n3 = document.getElementById('n3').value;
         var n4 = document.getElementById('n4').value;
         var n5 = document.getElementById('n5').value;
+        var n6 = document.getElementById('n6').value;
+        var n7 = document.getElementById('n7').value;
         var ball = 0;
 
         if (n1 == "Панков") {
@@ -323,33 +367,35 @@
             ball = ball + 1;
         }
 
-        if (n5 = "Швецов") {
+        if (n5 == "Швецов") {
+            ball = ball + 1;
+        }
+
+        if (n6 == "Протасьева") {
+            ball = ball + 1;
+        }
+
+        if (n7 == "Умнов") {
             ball = ball + 1;
         }
 
         switch (ball) {
-            case 0:
-                document.getElementById('n').textContent = "К сожалению, ты не ответил  ни на один вопрос, поэтому не сможешь получить фразу, поробуй ещё раз.";
-                break;
-            case 1:
-                document.getElementById('n').textContent = "К сожалению, ты ответил только на на один вопрос, поэтому не сможешь получить фразу, поробуй ещё раз.";
-                break;
-            case 2:
-                document.getElementById('n').textContent = "Ты ответил правильно на два вопроса, но все-таки нужно ответить на три и более, чтобы получить фразу.";
-                break;
-            case 3:
-                document.getElementById('n').textContent = "Хорошо, ты ответил правильно на три вопроса! Фраза: ";
-                break;
-            case 4:
-                document.getElementById('n').textContent = "Молодец, ты ответил правильно на четыре вопроса! Фраза: ";
+            case 5:
+                document.getElementById('n').textContent = "Хорошо, ты набрал 5 баллов, следовательно, получаешь фразу: ...";
                 break;
             case 5:
-                document.getElementById('n').textContent = "Безусловно, ответив правильно на все вопросы, ты получашь фразу:... Огромный молодец. Удачи в дальнейших играх.";
+                document.getElementById('n').textContent = "Хорошо, ты набрал 5 баллов, следовательно, получаешь фразу:...";
+                break;
+            case 5:
+                document.getElementById('n').textContent = "Отлично, правильно ответив на все вопросы, ты без сомнений получаешь фразу:...";
                 break;
             default:
                 break;
         }
 
+        if (ball < 5) {
+            document.getElementById('n').textContent = "К сожалению, ты не набрал допустимое количество баллов, поэтому фраза пока не доступна. Попробуй еще один раз.";
+        }
     }
 </script>
 
