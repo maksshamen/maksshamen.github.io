@@ -7,6 +7,10 @@
 
 <body style="background-color: yellow;">
     <h1>Тестирование</h1>
+    <div class="topnav">
+        <a class="active" href="#home">На главную</a>
+    </div>
+    <h2></h2>
     <p>Результаты вашего теста на вирус</p>
     <button id="button3" onclick="But3()">полож.(+)</button>
     <button id="button4" onclick="But4()">отриц.(-)</button>
@@ -35,6 +39,33 @@
         width: 500px;
         height: 200px;
         border-radius: 10px;
+    }
+    .topnav {
+        overflow: hidden;
+        background-color: green;
+        width: 400px;
+        height: 50px;
+
+
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #4CAF50;
+        color: white;
     }
 
     #button1,
